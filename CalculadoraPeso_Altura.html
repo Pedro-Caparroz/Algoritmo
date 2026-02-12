@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de peso altura</title>
+</head>
+<body>
+    <h1> Bem Vindo a calculadora </h1>
+    <h3> Seu peso e altura não te tornam melhor ou pior </h3>
+
+    <div>
+        Qual seu peso? (em kg) <input type="text" id="ipt_Weight_user" >
+    </div>
+    <br> 
+    <div>
+        Qual sua altura? (em metros) <input type="text" id="ipt_Height">
+        <div>
+            <button onclick="otp_Weight_Height()"> Fale comigo </button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function otp_Weight_Height (){
+        alert('Você pesa ' + ipt_Weight_user.value + ' kg e tem ' + ipt_Height.value+ ' m de altura')
+    }
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha pagina</title>
+</head>
+
+<body style="background-color:#85c236ad; ">
+    <h1> Verso</h1>
+    <h3>A moda a sua versão</h3>
+
+    <div>Me diga seu nome: <input type="text" id="Nome_usuario">
+        <button onclick="otp_welcome ()">
+            Venha ser um criador</button>
+    </div>
+
+    <div>Data de Nascimento: <input type="date" id="DtNasc_usuario">
+        <button onclick="otp_age ()">
+            Valide a idade</button>
+    </div>
+</body>
+
+
+<script>
+    function otp_welcome() {
+        alert('Bem vindo a equipe, ' + Nome_usuario.value)
+    }
+
+    function otp_age() {
+        const ipt_DtNasc_usuario = document.getElementById('DtNasc_usuario').value;
+
+        // define que será uma constante, a  define, busca em todo o doc, usa a função get element by id,
+        //  ou seja, procura pela Id definida em seguida, no caso a data de nascimento, caso já soubesse 
+        // o caminho, seria só colocar doc.hdsa.value.
+
+        const Ano_nasc = new Date(ipt_DtNasc_usuario).getFullYear();
+
+        //Define a constante, new Date pega o valor da input e transforma em uma data 
+
+        const idade = 2026 - Ano_nasc;
+
+        alert('Você tem  ' + idade + ' anos')
+    }
+</script>
+
+</html>

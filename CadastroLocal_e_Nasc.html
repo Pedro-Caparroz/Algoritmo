@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 2</title>
+</head>
+<body>
+    <h1> Cadastro De local e nascimento </h1>
+    <div>
+        Insira seu local de nascimento: <input type="text" id = "ipt_localNasc_user">
+    </div>
+    <br> 
+    <div>
+        Insira o seu ano de nascimento: <input type="text" id = "ipt_AnoNasc_user"> 
+        <div>
+            <button onclick="otp_ano_localNasc()"> 
+        Cadastrar
+        </button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function otp_ano_localNasc() {
+        alert('Você nasceu na cidade ' + ipt_localNasc_user.value + ' em ' + ipt_AnoNasc_user.value)
+    }
+</script>
+</html>

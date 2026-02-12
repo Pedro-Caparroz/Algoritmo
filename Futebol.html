@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu time do coração</title>
+</head>
+<body style="background-color: rgba(44, 42, 42, 0.863); color: #fde8e8;">
+    <h1>Seu time do coração</h1>
+
+    <div>
+        Insira o nome do seu time <input type="text" id="ipt_Nome_time">
+    </div>
+<br>
+<br>
+    <div>
+        Insira qquantidade de títulos: <input type="text" id="ipt_qtd_titulos">
+    <div>
+        <button onclick="otp_nome_titulos()">
+            Amo meu time
+        </button>
+        <div>
+
+        </div>
+    <div id="id_div"></div>
+</body>
+
+<script>
+    function otp_nome_titulos() {
+        id_div.innerHTML = 'O time '+ ipt_Nome_time.value + ' tem ' + ipt_qtd_titulos.value + ' titulos'
+
+        ipt_Nome_time.value = '';
+        ipt_qtd_titulos.value= '';
+    }
+</script>
+</html>
