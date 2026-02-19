@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Opinião da família </h1>
+    <br> <br>
+<div>
+    Qual foi sua nota na escola? <input type="text" id = "ipt_nota_escola">
+</div> <br>
+
+<button onclick="otp_opiniao_da_vo()">
+    Opinião da vó
+</button> 
+
+<button onclick="otp_opiniao_da_mae()">
+    Opiniao da mãe
+</button>
+
+<br><br><br>
+
+<div id="id_div_opiniao"></div>
+
+
+</body>
+
+<script>
+    function otp_opiniao_da_vo(){
+        id_div_opiniao.innerHTML = 'Muito bem, que neto inteligente, porque tirou ' + ipt_nota_escola.value
+
+        ipt_nota_escola.value = '';
+    }
+
+        function otp_opiniao_da_mae(){
+        id_div_opiniao.innerHTML = 'Não fez mais que tua obrigação com essa nota ' + ipt_nota_escola.value
+
+        ipt_nota_escola.value = '';
+    }
+
+
+</script>
+</html>

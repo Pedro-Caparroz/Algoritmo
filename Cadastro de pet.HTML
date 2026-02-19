@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro De Pet</title>
+</head>
+<body>
+    <h1>Queremos conhecer quem te faz feliz</h1>
+
+    <div>
+        Insira o nome do seu pet: <input type="text" id = "ipt_petName">
+    </div> <br>
+    <div>
+        Qual a especie?  <input type="text" id = "ipt_TypePet">
+    </div>
+
+    <button onclick="otp_resposta()">
+        Identificar Pet
+    </button>   
+    <div id = "id_div_pet"></div>
+</body>
+
+<script>
+
+function otp_resposta(){
+    id_div_pet.innerHTML =  'O seu pet se chama ' + ipt_petName.value + ' e ele é um' + ipt_TypePet.value
+}
+
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Farol</h1>
+    <h3>O semáforo digital</h3>
+
+    <button onclick="otp_stop()"> PARE </button>
+    <button onclick="otp_think()"> PENSE </button>
+    <button onclick="otp_GoAway()"> SIGA </button>
+
+    <div id="id_div_semaforo"></div>
+
+</body>
+<script>
+    function otp_stop() {
+        id_div_semaforo.innerHTML = 'Pare e Aguarde!'
+    }
+    function otp_think() {
+        id_div_semaforo.innerHTML = 'Pense se pode seguir ou se deve parar!'
+    }
+    function otp_GoAway() {
+        id_div_semaforo.innerHTML = 'Pode seguir adiante'
+    }    
+
+</script>
+
+</html>

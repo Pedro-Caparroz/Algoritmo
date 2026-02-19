@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contador de passos</title>
 </head>
 <body>
-    
+    <h1> Contador de passos</h1>
+    <div>
+        Insira distância percorrida (em Km): <input type="text" id="ipt_Dist_user">
+
+    </div>
+    <div>
+        Insira Tempo gasto (em minutos): <input type="text" id="ipt_TempoGasto_user">
+    </div>
+    <div>
+        <button onclick="TREINO_RESULT()">
+            Finalizar treino
+        </button>
+    </div>
+    <br> <br> <br>
+    <div id="id_resposta1_otp"></div>
+    <br>
+    <div id="id_resposta2_otp"></div>
 </body>
+<script>
+    function TREINO_RESULT() {
+        id_resposta1_otp.innerHTML = 'você percorreu ' + ipt_Dist_user.value + ' km hoje'
+        id_resposta2_otp.innerHTML = 'Seu tempo total de exercício foi de ' + ipt_TempoGasto_user.value + ' minutos'
+
+    }
+    
+</script>
 </html>
