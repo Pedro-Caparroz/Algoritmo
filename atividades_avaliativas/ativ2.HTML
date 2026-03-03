@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle diário de viagens</title>
+</head>
+<body>
+    <h1>Controle diário de viagens</h1>
+    <br>
+    <br>
+
+    <h4>Insira os dados da viagem realizada </h4>    
+
+    <div>
+        insira a distancia da viagem: (em km ) <input type="text" id = "ipt_distancia_viagem">  <span></span>
+        Qual o valor do pedagio? <input type="text" id = "ipt_valor_pedagio">
+    </div>
+    <div>
+        Insira a bandeira utilizada: (1 a 3) <input type="text" id = "ipt_band">
+
+    </div>
+
+    <div>
+        <button onclick="otp_valorfinal()">
+            Acumular corrida realizada
+        </button>
+    </div>
+
+    <div id="div"></div>
+
+</body>
+<script>
+        let cont = 0 ;
+        let valor_acumulado = 0;
+        let band1 = 0.97;
+        let band2 = 1.117;
+        let band3 = 1.223;
+        
+        function otp_valorfinal(){
+
+            cont++;
+
+            let qtd_km = Number(ipt_distancia_viagem.value);
+            let valor_km = Number(ipt_distancia_viagem.value)*1.25;
+            let valor_pedagio = Number(ipt_valor_pedagio.value);
+            let valor_bruto = valor_km + valor_pedagio;
+            let valor_viagem = 0;
+
+            
+            let Nband = Number(ipt_band.value);
+
+            if (qtd_km> 50){
+                if (Nband = 1){
+                    valor_acumulado += valor_bruto * band1 * 0.9;
+                    valor_viagem = valor_bruto * band1 * 0.9  ;
+
+
+                    ipt_distancia_viagem.value = '';
+                    ipt_valor_pedagio.value = '';
+                    ipt_band.value = '';
+                }
+
+                if (Nband = 2){
+                    valor_acumulado += valor_bruto * band2 * 0.9;
+                    valor_viagem = valor_bruto * band2 * 0.9  ;
+
+
+                    ipt_distancia_viagem.value = '';
+                    ipt_valor_pedagio.value = '';
+                    ipt_band.value = '';
+                }
+                if (Nband = 3){
+                    valor_acumulado += valor_bruto * band3 * 0.9;
+                    valor_viagem = valor_bruto * band3 * 0.9  ;
+
+
+                    ipt_distancia_viagem.value = '';
+                    ipt_valor_pedagio.value = '';
+                    ipt_band.value = '';
+                }
+            }
+            else {
+                if (Nband = 1){
+                    valor_acumulado += valor_bruto * band1 ;
+                    valor_viagem = valor_bruto * band1  ;
+
+
+                    ipt_distancia_viagem.value = '';
+                    ipt_valor_pedagio.value = '';
+                    ipt_band.value = '';
+                }
+
+                if (Nband = 2){
+                    valor_acumulado += valor_bruto * band2 ;
+                    valor_viagem = valor_bruto * band2  ;
+
+
+                    ipt_distancia_viagem.value = '';
+                    ipt_valor_pedagio.value = '';
+                    ipt_band.value = '';
+                }
+                if (Nband = 3){
+                    valor_acumulado += valor_bruto * band3 ;
+                    valor_viagem = valor_bruto * band3 ;
+
+
+                    ipt_distancia_viagem.value = '';
+                    ipt_valor_pedagio.value = '';
+                    ipt_band.value = '';
+                }
+            }
+         div.innerHTML += `<br> ${cont}ª  corrida de ${qtd_km} km com valor de R$ ${valor_viagem.toFixed(2)} – ACUMULADO DO DIA R$ ${valor_acumulado.toFixed(2)} <br>` 
+
+        }   
+ </script>
+
+</html>

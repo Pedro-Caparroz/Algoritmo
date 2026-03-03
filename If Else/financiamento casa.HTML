@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa propria</title>
+</head>
+<body>
+    Qual a renda familiar <input type="text" id = "ipt_renda"> <br>
+    Qual o valor da prestação? <input type="text" id = ipt_valor_prestacao>
+
+    <div>
+        <button onclick="otp_financiamento()">
+            verificar financiamento
+        </button>
+    </div>
+
+    <div id="div"></div>
+
+    
+</body>
+<script>
+    function otp_financiamento(){
+        let renda = Number(ipt_renda.value);
+        let prestacao = Number(ipt_valor_prestacao.value);
+        let prestacao_por_renda = prestacao/renda*100;
+
+        if (prestacao_por_renda <=30 ) {
+            
+            div.innerHTML = ` prestação corresponde a ${prestacao_por_renda}% da renda familiar` 
+
+        }
+        else {
+             div.innerHTML = ` prestação corresponde a ${prestacao_por_renda}% da renda familiar, Será necessário complementar a renda familiar`
+        }
+
+
+    }
+</script>
+</html>

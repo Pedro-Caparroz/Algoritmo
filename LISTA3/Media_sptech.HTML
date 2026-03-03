@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média da SPTECH</title>
+</head>
+<body>
+    <h1>Calculo da média </h1>
+    <h3>Já se perguntou como especular sua nota final?</h3>
+
+    <div>
+        Insira seu nome para identificação: <input type="text" id="ipt_nome">
+
+    </div>
+    <div>
+       <h6> Insira as notas: </h6>
+       Continuada: <input type="text" id="ipt_continuada"> 
+       Semestral <input type="text" id="ipt_semestral">
+    </div>
+    <div>
+        <button onclick="opt_media()">
+            média
+        </button>
+    </div>
+    <div id="div"> </div>
+</body>
+<script>
+    function opt_media() {
+        let continuada = Number(ipt_continuada.value)*0.4;
+        let semestral = Number(ipt_semestral.value)* 0.6;
+        let media_final = continuada+semestral;
+
+        div.innerHTML = ` A média de ${ipt_nome.value} será de ${media_final}`;
+    }
+</script>
+</html>

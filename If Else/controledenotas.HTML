@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota da Atividade Avaliativa</title>
+</head>
+<body>
+    <h1>ACERVO DE AVALIAÇÃO</h1>
+
+
+    <h4> INISRA AS NOTAS </h4>
+    <div>
+        Nota 1  <input type="text" id = "ipt_nota1">
+        Nota 2  <input type="text" id = "ipt_nota2">
+        Nota 3  <input type="text" id = "ipt_nota3">
+        </div>
+<br>
+        <div>
+            <button onclick="otp_resultado()">
+                Analisar desempenho
+            </button>
+        </div>
+        <div id = "idDiv">
+        </div>
+</body>
+    <script> 
+        function otp_resultado(){
+            let nota1 = Number(ipt_nota1.value);
+            let nota2 = Number(ipt_nota2.value);
+            let nota3 = Number(ipt_nota3.value);
+
+            let soma = nota1 + nota2 + nota3;
+            let Media = soma/3;
+
+            if (Media >= 9.4){
+
+            idDiv.innerHTML = `Sua média foi de: ${Media.toFixed(4)}. Parabéns, você é fora de série! `;
+
+            }
+            else {
+               idDiv.innerHTML =  `Sua média foi de: ${Media.toFixed(4)}.` ;
+            }
+        }
+
+    </script>
+</html>

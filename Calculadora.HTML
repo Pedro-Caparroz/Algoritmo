@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora muito boa</title>
+</head>
+<body>
+    <h2>Calculadora incrível</h2>
+    Entre com o primeiro número: <input id ="ipt_num1"> <br>
+    Entre com o segundo número: <input id ="ipt_num2"> <br> <br>
+    <button onclick="multiplicar()">Multipicar</button>
+    <button onclick="dividir()">Dividir</button><br>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button><br>
+    <button onclick="potencia()">Potenciação</button>
+    <button onclick="radic()">Radiciação</button><br>
+    <button onclick="resto()">Resto da Divisão</button>
+    <button onclick="razao()">Razão entre os dois</button> 
+    <button onclick="frequencia()">Frequência Relativa</button><br><br>
+    <div id="div_msg"></div>
+    <!-- 
+        As operações aritméticas são realizadas com os seguintes simbolos:
+        *   Multiplicação
+        /   Divisão
+        **  Exponenciação
+        -   Subtração
+        +   Soma
+        %   Para obter o RESTO DA DIVISÃO
+
+        OBS: Para fazer a radiciação usamos a exponenciação com o expoente 1/índice.
+        Por exemplo: Para encontrar a raiz quadrada o índice é 2, então fazemos a 
+        exponenciação com expoente 1/2. Para encontrar a raiz cúbica o índice é 3, 
+        então fazemos a exponenciação com expoente 1/3 e assim sucessivamente
+        
+        #MUITA_ATENÇÃO - Na aula passada vimos que o sinal de + é usado para fazer 
+        a concatenação e agora estamos mostrando que a soma é feita com o mesmo 
+        sinal....    O Javascript fará a soma somente quando os dois operandos forem 
+        realmente numéricos, caso contrário, o Javascript fará a concatenação, 
+        portanto, quando que for usar campo de entrada em operação de adição SEMPRE
+        utilize a função Number(), onde a sintaxe é Number(campo_entrada.value)
+    -->
+</body>
+</html>
+<script>
+    function multiplicar() {
+        div_msg.innerHTML = "A multiplicação de " + ipt_num1.value + " com o " + ipt_num2.value + " é = " + ipt_num1.value * ipt_num2.value;
+    }
+    function dividir() {
+        let ax_cociente = ipt_num1.value / ipt_num2.value
+        div_msg.innerHTML = "A divisão de " + ipt_num1.value + " por " + ipt_num2.value + " é = " + ax_cociente;    
+    }
+    function somar() {
+        // div_msg.innerHTML = "A soma de " + ipt_num1.value + " com " + ipt_num2.value + " é = " + ipt_num1.value + ipt_num2.value;
+        div_msg.innerHTML = "A soma de " + ipt_num1.value + " com " + ipt_num2.value + " é = " + (Number(ipt_num1.value) + Number(ipt_num2.value));
+    }
+    function subtrair() {
+        // aqui eu criei a variável ax_num1 que recebeu o conteudo do campo de tela ipt_num1 
+        // depois criei a variável ax_num2 que recebeu o conteudo do campo de tela ipt_num2
+
+        // essas variáveis podem ser usadas várias vezes dentro da função que elas foram criadas
+        // mas essas variáves NÃO podem ser usadas em outras funções.
+        let ax_num1 = Number(ipt_num1.value);
+        let ax_num2 = Number(ipt_num2.value);
+        div_msg.innerHTML = "A subtração de " + ax_num1 + " com " + ax_num2 + " é = " + (ax_num1 - ax_num2);
+    }  
+    function potencia() {
+        // aqui eu criei variáveis tanto para receber os campos de tela como para receber o resultado da operação
+        let ax_n1 = Number(ipt_num1.value);
+        let ax_n2 = Number(ipt_num2.value);
+        let ax_pot = 0;
+        ax_pot = ax_n1 ** ax_n2;
+        div_msg.innerHTML = ax_n1 + " elevaldo a " + ax_n2 + "ª potencia é: " +  ax_pot;
+    }
+    function radic() {
+        // Observe que aqui as variáveis tem o mesmo nome da função acima, mas são variáveis válidas, pois uma variável criada em uma função ela é válida somente dentro daquela função
+        let ax_n1 = Number(ipt_num1.value);
+        let ax_n2 = Number(ipt_num2.value);
+        let ax_rad = ax_n1 ** (1/ax_n2);
+        div_msg.innerHTML = "a raiz de " + ax_n2 + "ª do número " + ax_n1 + " é: " + ax_rad;
+    }
+    function resto() {
+        alert ('cheguei')
+        /* aqui eu criei a variável ax_resto para receber o resto da divisão do ipt_num1 pelo ipt_num2
+
+                INTERPOLAÇÃO!
+        A Interpolação é uma prática em substituição a concatenação para incorporar
+        variaveis, expressões e literais dentro de uma string
+
+        Iniciamos e finalizamos com a CRASE! (isso mesmo, não é aspas)
+        Usamos ${} para colocar a parte dinamica (variável ou expressão) 
+        */
+        let ax_resto = Number(ipt_num1.value) % Number(ipt_num2.value);
+        div_msg.innerHTML = `O resto da divisão de ${ipt_num1.value} por ${ipt_num2.value} é:  ${ax_resto}`;
+    }
+    function razao() {
+        // Observe que neste caso eu estou fazendo o cáculo (expressão) na interpolação
+        let ax_n1 = Number(ipt_num1.value);
+        let ax_n2 = Number(ipt_num2.value);
+        div_msg.innerHTML = `A razão entre ${ax_n1} e ${ax_n2} é de: ${ax_n1/ax_n2*100}% <br>
+        A razão entre ${ax_n2} e ${ax_n1} é de: ${ax_n2/ax_n1*100}%`;
+    }
+    function frequencia() {
+        /*
+        Para exibir, e somente exibir, o conteúdo numérico (de uma variável ou de uma expressão) eu usei o .toFixed().
+        O .toFixed() arredonda o valor numério para a quantidade de casas decimais informada entre os parenteses (), 
+        ou seja, no nosso caso: ax_freq_n1.toFixed(1) eu estou exibindo o conteúdo da variável ax_freq_n1 com uma casa decimal.
+        */
+        let ax_n1 = Number(ipt_num1.value);
+        let ax_n2 = Number(ipt_num2.value);
+        let ax_freq_n1 = (ax_n1 / (ax_n1 + ax_n2)) * 100;
+        let ax_freq_n2 = (ax_n2 / (ax_n1 + ax_n2)) * 100;
+        div_msg.innerHTML = `A frequência de ${ax_n1} em relação ao total é de: ${ax_freq_n1.toFixed(1)}% <br>
+        E a frequência de ${ax_n2}  é de: ${ax_freq_n2.toFixed(1)}%`;
+    }
+    
+</script>

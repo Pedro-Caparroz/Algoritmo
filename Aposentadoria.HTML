@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h1> Quanto falta para aposentar?</h1>
+
+    <div>
+        Insira a idade: <input type="text" id="ipt_age_user">
+        
+        <button onclick="otp_aposentadoria_Homem()">
+            Aposentadoria Homem
+        </button>
+                <button onclick="otp_aposentadoria_Mulher()">
+            Aposentadoria Mulher
+        </button>
+        <div id="id_div"></div>
+    </div>
+
+    
+</body>
+    <script>
+        function otp_aposentadoria_Homem(){
+            let ax_age = Number(ipt_age_user.value);
+            let ax_idade_aposentadoria = Number(70);
+            let ax_timerest = ax_idade_aposentadoria - ax_age ;
+    
+            id_div.innerHTML = `faltam ${ax_timerest} para você se aposentar`
+
+        }
+           function otp_aposentadoria_Mulher(){
+            let ax_age = Number(ipt_age_user.value);
+            let ax_idade_aposentadoria = Number(60);
+            let ax_timerest = ax_idade_aposentadoria - ax_age;
+    
+            id_div.innerHTML = `faltam ${ax_timerest} para você se aposentar`
+
+        }
+    </script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanças empresarial</title>
+</head>
+<body>
+    <h2> INSIRA OS DADOS NECESSÁRIOS </h2>
+    
+    <div> Valor recebido com venda de peças: <input type="text" id = "ipt_valor_vendaPeca">
+    Valor recebido da venda de serviços: <input type="text" id = "ipt_valor_vendaService">
+    </div> 
+    <div>
+    Insira o percentual de impostos: (não insira o "%" ) <input type="text" id = "ipt_imposto">
+    Insira o valor dos gastos: <input type="text" id = "ipt_Gastos">
+    </div>
+
+    <button onclick="otp_acumular()">ACUMULAR</button> <br>
+
+    <div id="div"></div>
+
+</body>
+
+<script>
+
+    let cont_mes = 0;
+    let Balanco_geral = 0;
+
+
+
+    function otp_acumular(){
+
+    let Recebimento_mes = 0;
+    let valor_imposto = 0;
+    let Gasto_e_imposto_total = 0;
+    let Balanço_total_mes = 0;
+
+        cont_mes ++; // += 1
+        Recebimento_mes += Number(ipt_valor_vendaPeca.value) + Number(ipt_valor_vendaService.value);
+        valor_imposto = Number(ipt_imposto.value)/100 * Recebimento_mes;
+        Gasto_e_imposto_total = valor_imposto + Number(ipt_Gastos.value);
+        Balanço_total_mes = Recebimento_mes - Gasto_e_imposto_total;
+
+        Balanco_geral += Balanço_total_mes
+
+
+
+        div.innerHTML += ` <br> Resumo do mês ${cont_mes}, Total recebido = R$ ${Recebimento_mes.toFixed(2)} <br>
+         Valor do Imposto = R$ ${valor_imposto} – 
+        Saldo Final do mês de R$ ${Balanço_total_mes} – Acumulado até o Momento = R$ ${Balanco_geral} <br>`
+
+        ipt_valor_vendaPeca.value = '';
+        ipt_valor_vendaService.value = '';
+        ipt_imposto.value = '';
+        ipt_Gastos.value = '';
+    }
+</script>
+</html>

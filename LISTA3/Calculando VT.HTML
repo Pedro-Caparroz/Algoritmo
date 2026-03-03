@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando VT</title>
+</head>
+<body>
+    <h1>Quanto voce vai ganhar de VT?</h1>
+
+    <div>
+        Insira o valor da passagem de onibus: <input type="text" id = "ipt_valor_passagem"> <br>
+        Quantidade de viagens: <input type="text" id = "ipt_qtd_viagens">
+        Distância do trajeto Casa-Trabalho: (em km) <input type="text" id = "ipt_distancia">
+    </div>
+    <div>
+        <button onclick="otp_ValorVT()"> Calcular VT </button>
+    </div>
+
+    <div id="div"></div>
+</body>
+<script>
+    function otp_ValorVT () {
+        let viagens_app = Number(ipt_qtd_viagens.value)*0.1;
+        let viagens_onibus = Number(ipt_qtd_viagens.value)*0.9;
+
+        let gasto_app = viagens_app * Number(ipt_distancia.value)*0.75;
+        let gasto_onibus = viagens_onibus* Number(ipt_valor_passagem.value);
+        let gasto_total = gasto_app + gasto_onibus;
+
+        div.innerHTML = `Você vai gastar R$${gasto_total.toFixed(2)} por mês com transporte`
+    }
+</script>
+
+</html>

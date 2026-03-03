@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota da Atividade Avaliativa</title>
+</head>
+<body>
+    <h1>ACERVO DE AVALIAÇÃO</h1>
+
+    <div>
+        Nome do aluno: <input type="text" id = "ipt_nome">
+    </div>
+    <h4> INISRA AS NOTAS </h4>
+    <div>
+        Atividade 1  <input type="text" id = "ipt_atv1">
+        Atividade 2  <input type="text" id = "ipt_atv2">
+        Atividade 3  <input type="text" id = "ipt_atv3">
+        </div>
+<br>
+        <div>
+            <button onclick="otp_resultado()">
+                Mostrar nota
+            </button>
+        </div>
+        <div id = "idDiv">
+        </div>
+</body>
+    <script> 
+        function otp_resultado(){
+            let atv1 = Number(ipt_atv1.value);
+            let atv2 = Number(ipt_atv2.value);
+            let atv3 = Number(ipt_atv3.value);
+
+            let soma = atv1 + atv2 + atv3;
+            let divisao = soma/3;
+
+            idDiv.innerHTML = `A soma das suas três atividades é: ${soma} <br><br>
+
+                ${ipt_nome.value}, a média das suas atividades é: ${divisao.toFixed(4)} `
+
+        }
+    </script>
+</html>

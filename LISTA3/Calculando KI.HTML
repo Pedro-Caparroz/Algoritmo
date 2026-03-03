@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Ki </title>
+</head>
+<body>
+    <div>
+        Me dê seu ki base <input type="text"  id="ipt_qtd_ki">
+    </div>
+    <h6> Transformar em... </h6> 
+    <div>
+    <button onclick="otp_SSJ()"> SSJ </button> <button onclick="otp_SSJ2()"> SSJ2 </button> <button onclick="otp_SSJ3()"> SSJ3</button>
+    </div>
+
+    <div id="div"></div>
+</body>
+    <script>
+        function otp_SSJ(){
+            let qtdki = Number(ipt_qtd_ki.value);
+            div.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${qtdki*50} `
+        }
+        function otp_SSJ2(){
+            let qtdki = Number(ipt_qtd_ki.value);
+            div.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${qtdki*100} `
+        }
+        function otp_SSJ3(){
+            let qtdki = Number(ipt_qtd_ki.value);
+            div.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${qtdki*200} `
+        }
+    </script>
+</html>

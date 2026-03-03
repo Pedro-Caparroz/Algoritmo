@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisão</title>
+</head>
+<body>
+
+    <h1>Divisão</h1>
+    <div>
+        Insira o dividendo: <input type="text" id ="ipt_dividendo" >
+    </div>
+    <div>
+        Insira o divisor: <input type="text" id = "ipt_divisor">
+    </div>
+    <button onclick="otp_quociente()">
+        Quociente
+    </button>
+    <button onclick="otp_resto()">
+        Resto
+    </button>
+        <button onclick="otp_completo()">
+        divisão completa
+    </button>
+
+    <div id="id_div"></div>
+
+</body>
+
+    <script>
+        function otp_quociente(){
+            let ax_quociente = Number(ipt_dividendo.value) / Number(ipt_divisor.value)
+
+            id_div.innerHTML = ` A divisão de ${ipt_dividendo.value} por ${ipt_divisor.value} é: ${ax_quociente}`
+        }
+
+        function otp_resto(){
+            let ax_resto = Number(ipt_dividendo.value) % Number(ipt_divisor.value)
+
+            id_div.innerHTML = ` O resto da divisão de ${ipt_dividendo.value} por ${ipt_divisor.value} é: ${ax_resto}`
+        }
+        function otp_completo(){
+            let ax_quociente = Number(ipt_dividendo.value) / Number(ipt_divisor.value)
+            let ax_resto = Number(ipt_dividendo.value) % Number(ipt_divisor.value)
+
+            id_div.innerHTML = ` A divisão de ${ipt_dividendo.value} por ${ipt_divisor.value} é: ${ax_quociente.toFixed(2)} e o seu resto é: ${ax_resto}`
+        }
+    </script>
+</html>

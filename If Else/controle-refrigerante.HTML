@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de refrigerante</title>
+</head>
+<body>
+
+    <div>
+        Quantas latas de refrigerante você toma por dia? <input type="text"  id="ipt_qtd_refri">
+    </div>
+    <Button onclick="otp_qtd_refri()"> Refri Por Ano </Button>
+
+    <div id="div"> </div>
+
+</body>
+<script>
+    function otp_qtd_refri(){ 
+       refriNoano = Number(ipt_qtd_refri.value)*365;
+
+       
+
+        if ( refriNoano > 500){
+
+        div.innerHTML = `você consome ${refriNoano} latas de refrigerante por ano <br> <h1> CUIDADO COM A DIABETES! </h1>`;
+        }
+        else{
+            div.innerHTML = ` você consome ${refriNoano} latas de refrigerante por ano `
+        }
+
+
+    }
+</script>
+</html>

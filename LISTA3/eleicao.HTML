@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Eleição </title>
+</head>
+<body>
+
+    <H1> A eleição começou mais cedo </H1>
+
+    Insira a quantidade de votos no candidato A: <input type="text" id ="ipt_VotosA"> <br> 
+    Insira a quantidade de votos no candidato B: <input type="text" id ="ipt_VotosB"> <br> 
+    Insira a quantidade de votos brancos: <input type="text" id ="ipt_VotosBrancos"> <br> 
+    Insira a quantidade de votos nulos: <input type="text" id ="ipt_VotosNulos"> <br>     
+
+    <button onclick="otp_resultado()" >
+        Resultado da Eleição
+    </button>
+        
+    
+    <div id="div"></div>
+</body>
+    <script>
+        function otp_resultado() {
+            let votosA = Number(ipt_VotosA.value);
+            let votosB = Number(ipt_VotosB.value);
+            let votosBrancos = Number(ipt_VotosBrancos.value);
+            let votosNulos = Number(ipt_VotosNulos.value);
+
+            let Votos_totais = votosA + votosB + votosBrancos + votosNulos
+
+            div.innerHTML = `
+            Total de votos ${Votos_totais} <br> <br>
+            Candidato A: ${votosA/Votos_totais *100}% (${votosA} votos) <br> <br>
+            Candidato B: ${votosB/Votos_totais *100}% (${votosB} votos) <br> <br>
+            Inválidos: ${(votosBrancos+votosNulos) /Votos_totais *100}% (${votosBrancos+votosNulos} votos) <br> <br>
+            `;
+
+        }
+    </script>
+</html

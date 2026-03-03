@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta de luz</title>
+</head>
+<body>
+    <div> Quantos KWh são consumidos? <input type="text" id="ipt_kwh_consumido">
+    </div>
+    <button onclick="otp_contadeluz()">
+        Calcular cconta de luz
+    </button>
+
+    <div id="div"></div>
+</body>
+<script>
+
+    function otp_contadeluz(){
+
+        kwh_consumido = Number(ipt_kwh_consumido.value); 
+        kwh_custo = 0.85;
+        if (kwh_consumido<100 ){
+            div.innerHTML =` valor da conta ${kwh_consumido * kwh_custo * 0.90}`
+        }
+        else{
+            div.innerHTML =` valor da conta ${kwh_consumido*kwh_custo}`;
+
+        }
+    }
+
+
+</script>
+</html>

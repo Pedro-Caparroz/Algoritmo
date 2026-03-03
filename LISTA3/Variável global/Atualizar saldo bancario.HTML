@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizart saldo </title>
+</head>
+<body>
+    <h3>Sem alvoroço, o que aconteceu?</h3>    
+    
+    <button onclick="otp_receber()"> Recebi 100 Reais </button> <button onclick="otp_pagar()"> Perdi 50 Reais </button>
+
+    <div id="div"></div>
+</body>
+    <script>
+        let Var_Saldo = 0;
+        function otp_receber(){
+            Var_Saldo = 100;
+            div.innerHTML += `transferência de R$100 recebida! Saldo atual: R$${Var_Saldo} <br>`;
+        }
+        function otp_pagar(){
+            Var_Saldo = 50;
+            div.innerHTML += `transferência de R$50 recebida! Saldo atual: R$${Var_Saldo} <br>`;
+        }
+    </script>
+</html>

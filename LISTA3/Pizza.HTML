@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+
+    <h1> QUEM QUER PIZZA?</h1>
+
+    Qual sabor deseja? <input type="text" id = "ipt_sabor"> <p> Qual o valor? <input type="text" id = "ipt_preco"> </p>
+
+    <div>
+        Quantos amigos vão comer? <input type="text" id = "ipt_qtd_friends">
+    </div>
+
+    <div>
+        <button onclick="otp_valor_dividido()">
+            Ver valor por amigo
+        </button>
+    </div>
+    <div id="div"></div>
+</body>
+    <script>
+        function otp_valor_dividido() {
+            let valor_com_caixinha = Number(ipt_preco.value)*1.1;
+            let valor_dividido = valor_com_caixinha/Number(ipt_qtd_friends.value);
+            
+            div.innerHTML = `Cada amigo vai colaborar com R$${valor_dividido.toFixed(2)} para a pizza de ${ipt_sabor.value}`
+        }
+    </script>
+</html>

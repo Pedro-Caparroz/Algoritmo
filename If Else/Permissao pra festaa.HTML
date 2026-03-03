@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permissao Para festa</title>
+</head>
+<body>
+    <h2> Será que você pode ir a festa? </h2>
+
+    <div> 
+        Insira sua idade <input type="text" id = "ipt_idade">
+    </div>
+    <button onclick="otp_festa()"> Ir para festa </button>
+
+    <div id="div"></div>
+</body>
+<script>
+    function otp_festa() {
+        let idade = Number(ipt_idade.value);
+
+        if (idade < 18){
+            div.innerHTML = `Pedir permissão pro responsável`;
+            alert ('#partiuFesta');
+        }
+        else {
+            alert ('#partiuFesta');
+        }
+        
+    }
+</script>
+</html>

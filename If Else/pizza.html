@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+
+    <h1> QUEM QUER PIZZA?</h1>
+
+Qual o valor? <input type="text" id = "ipt_preco"> </p>
+
+    <div>
+        Quantos amigos vão comer? <input type="text" id = "ipt_qtd_friends">
+    </div>
+
+    <div>
+        <button onclick="otp_vai_rolar_mesmo()">
+            Vai rolar mesmo?
+        </button>
+    </div>
+    <div id="div"></div>
+</body>
+    <script>
+
+
+        function otp_vai_rolar_mesmo() {
+            let valor_pizza = Number(ipt_preco.value);
+             let valor_dividido = valor_pizza/Number(ipt_qtd_friends.value);
+
+            if (valor_dividido <= 20) {
+            div.innerHTML = `Cada amigo vai pagar com R$${valor_dividido.toFixed(2)} `
+            }
+            else{
+                div.innerHTML = `Deu ruim! Pizza muito cara!` 
+            }
+        }
+    </script>
+</html>

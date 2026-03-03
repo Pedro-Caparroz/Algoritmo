@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saldo bancario</title>
+</head>
+<body>
+    <h1> Saldo do banco </h1>
+    Qual seu saldo <input type="text" id = "ipt_saldo_inic">
+
+    valor do debito <input type="text" id = "ipt_gasto">
+
+    <div>
+        <button onclick="otp_saldo_atual()">
+            Analisar conta
+        </button>
+    </div>
+    <div id="div"></div>
+
+</body>
+
+<script>
+    let saldo_atual = 0;
+
+    function otp_saldo_atual (){
+        saldo_inic = Number(ipt_saldo_inic.value);
+        gasto = Number(ipt_gasto.value);
+        saldo_atual = saldo_inic - gasto;
+
+        div.innerHTML = `O saldo atual da conta corrente é ${saldo_atual.toFixed(2)}`;
+        
+    }
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposito e retirada de dinheiro</title>
+</head>
+<body>
+    <h2>INSIRA UM VALOR PARA:</h2>
+
+    <input type="text" id = "ipt_valor">
+
+    <button onclick="otp_deposito()"> Depositar </button> <button onclick="otp_retirada()"> Retirar </button>
+
+    <H3> EXTRATO</H3>
+
+    <div id="div"></div>
+
+</body>
+    <script>
+        let Var_Saldo = 0
+
+        function otp_deposito() {
+            Valor_ipt = Number(ipt_valor.value);
+            Var_Saldo += Valor_ipt;
+
+            div.innerHTML += `Depósito de R$${Valor_ipt} efetuado! Saldo atual: R$${Var_Saldo} <br>`
+        }
+
+
+        function otp_retirada() {
+            Valor_ipt = Number(ipt_valor.value);
+            Var_Saldo -= Valor_ipt;
+
+            div.innerHTML += `Depósito de R$${Valor_ipt} efetuado! Saldo atual: R$${Var_Saldo} <br> `
+        }
+    </script>
+
+
+</html>
